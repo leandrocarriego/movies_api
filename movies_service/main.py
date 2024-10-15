@@ -3,12 +3,11 @@ from typing import Union
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api.v1.routes import people_router, people_movies_router
+from app.api.v1.routes import movies_router
 
-app = FastAPI(title="People Service")
+app = FastAPI(title="Movies Service")
 
-app.include_router(people_router)
-app.include_router(people_movies_router)
+app.include_router(movies_router)
 
 app.add_middleware(
     CORSMiddleware,
